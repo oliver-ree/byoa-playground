@@ -1,24 +1,80 @@
+# Node.js dependencies
+/node_modules/
+
+# Vite cache and build outputs
+.vite/
+/dist/
+/dist-ssr/
+/build/
+
+# Yarn Plug’n’Play files
+.pnp.*
+.yarn/cache/
+/.yarn/install-state.gz
+.yarn/unplugged/
+/.yarn/build-state.yml
+
+# Yarn integrity file
+.yarn-integrity
+
+# Local env files
+.env
+.env.*.local
+!.env.example
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Coverage reports
+coverage/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Lockfiles
+/package-lock.json
+
+# macOS artifacts
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX/
+
+# Windows artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux thumbnail cache
+.thumbnail/
+
+# Editor / IDE
+.vscode/
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+
+# Vim swap / session files
+*.swp
+*.swo
+*.swn
+Session.vim
+
+# Emacs backup / auto-save
+*~
+\#*\#
+\.#*
+
+# Cursor / temp files
+*.cursor
+*.temp
+*.tmp
+
