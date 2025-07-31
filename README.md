@@ -6,7 +6,7 @@
       - Open Terminal (you can find it in Applications > Utilities)
       - Type: `mkdir -p ~/Developer`
       - Type: `cd ~/Developer`
-      - Type: `git clone https://github.com/your-organization/internal-design-prototypes.git`
+      - Type: `git clone git@github.com:eucalyptusvc/internal-design-prototypes.git`
       - Press Enter
 
 2. Install dependencies:
