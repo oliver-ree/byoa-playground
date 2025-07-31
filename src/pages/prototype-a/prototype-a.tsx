@@ -1,0 +1,36 @@
+export default function PrototypeA() {
+  return (
+    <div className="container mx-auto py-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold">Prototype A</h1>
+          <p className="text-muted-foreground mt-2">
+            This is the first prototype implementation
+          </p>
+        </div>
+
+        <div className="p-6 border rounded-lg bg-card">
+          <h2 className="text-2xl font-semibold mb-4">Prototype A Content</h2>
+          <p className="mb-4">
+            This is where the content for Prototype A would go. You can add your
+            actual prototype implementation here.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 border rounded-lg bg-muted">
+              <h3 className="font-medium mb-2">Feature 1</h3>
+              <p className="text-sm text-muted-foreground">
+                Description of the first feature of Prototype A.
+              </p>
+            </div>
+            <div className="p-4 border rounded-lg bg-muted">
+              <h3 className="font-medium mb-2">Feature 2</h3>
+              <p className="text-sm text-muted-foreground">
+                Description of the second feature of Prototype A.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
