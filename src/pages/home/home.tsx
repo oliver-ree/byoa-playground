@@ -3,10 +3,10 @@ import { Button } from '@/components/ui/button';
 
 const prototypes = [
   {
-    id: 'prototype-a',
-    name: 'Prototype A',
-    description: 'This is the first prototype example',
-    path: '/prototype-a',
+    id: 'diagnostics-lite',
+    name: 'Diagnostics Lite',
+    description: 'Letsgo.',
+    path: '/diagnostics-lite',
   },
   {
     id: 'prototype-b',
