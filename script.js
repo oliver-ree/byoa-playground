@@ -10,6 +10,7 @@ class PomodoroTimer {
         
         this.initializeElements();
         this.loadFromStorage();
+        this.initializeTheme();
         this.updateDisplay();
         this.setupEventListeners();
     }
@@ -27,6 +28,8 @@ class PomodoroTimer {
         this.notificationText = document.getElementById('notificationText');
         this.notificationClose = document.getElementById('notificationClose');
         this.timerDisplay = document.querySelector('.timer-display');
+        this.themeToggle = document.getElementById('themeToggle');
+        this.themeIcon = this.themeToggle.querySelector('.theme-icon');
     }
 
     setupEventListeners() {
@@ -34,6 +37,7 @@ class PomodoroTimer {
         this.pauseBtn.addEventListener('click', () => this.pause());
         this.resetBtn.addEventListener('click', () => this.reset());
         this.notificationClose.addEventListener('click', () => this.hideNotification());
+        this.themeToggle.addEventListener('click', () => this.toggleTheme());
 
         // Mode selector
         document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -248,6 +252,33 @@ class PomodoroTimer {
             oscillator.stop(audioContext.currentTime + 0.3);
         } catch (error) {
             console.log('Audio notification not supported');
+        }
+    }
+
+    toggleTheme() {
+        const body = document.body;
+        const isDarkMode = body.classList.contains('dark-mode');
+        
+        if (isDarkMode) {
+            body.classList.remove('dark-mode');
+            this.themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.add('dark-mode');
+            this.themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    initializeTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.body.classList.add('dark-mode');
+            this.themeIcon.textContent = '☀️';
+        } else {
+            this.themeIcon.textContent = '🌙';
         }
     }
 

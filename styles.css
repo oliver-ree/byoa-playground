@@ -12,6 +12,13 @@ body {
     align-items: center;
     justify-content: center;
     color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    color: #e2e8f0;
 }
 
 .container {
@@ -23,10 +30,61 @@ body {
     max-width: 500px;
     width: 90%;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .container {
+    background: rgba(30, 41, 59, 0.95);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 header {
     margin-bottom: 2rem;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+body.dark-mode .theme-toggle {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.theme-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(20deg);
 }
 
 header h1 {
@@ -34,12 +92,23 @@ header h1 {
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode header h1 {
+    color: #f1f5f9;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
     color: #718096;
     font-size: 1.1rem;
     font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode header p {
+    color: #94a3b8;
 }
 
 .timer-container {
@@ -53,6 +122,13 @@ header p {
     border-radius: 16px;
     padding: 2rem;
     border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .timer-display {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 2px solid #475569;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .time {
@@ -62,12 +138,23 @@ header p {
     font-variant-numeric: tabular-nums;
     line-height: 1;
     margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .time {
+    color: #f1f5f9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .status {
     font-size: 1.1rem;
     color: #718096;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .status {
+    color: #94a3b8;
 }
 
 .timer-controls {
@@ -98,9 +185,18 @@ header p {
     color: white;
 }
 
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
 .btn-primary:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+body.dark-mode .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -109,9 +205,20 @@ header p {
     border: 2px solid #e2e8f0;
 }
 
+body.dark-mode .btn-secondary {
+    background: #374151;
+    color: #e5e7eb;
+    border: 2px solid #4b5563;
+}
+
 .btn-secondary:hover:not(:disabled) {
     background: #edf2f7;
     transform: translateY(-1px);
+}
+
+body.dark-mode .btn-secondary:hover:not(:disabled) {
+    background: #4b5563;
+    border-color: #6b7280;
 }
 
 .mode-selector {
@@ -133,14 +240,31 @@ header p {
     transition: all 0.2s ease;
 }
 
+body.dark-mode .mode-btn {
+    border: 2px solid #4b5563;
+    background: #374151;
+    color: #d1d5db;
+}
+
 .mode-btn:hover {
     background: #edf2f7;
+}
+
+body.dark-mode .mode-btn:hover {
+    background: #4b5563;
+    border-color: #6b7280;
 }
 
 .mode-btn.active {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-color: #667eea;
+}
+
+body.dark-mode .mode-btn.active {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-color: #6366f1;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .progress-container {
@@ -153,6 +277,12 @@ header p {
     background: #e2e8f0;
     border-radius: 4px;
     overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode .progress-bar {
+    background: #374151;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .progress-fill {
@@ -163,12 +293,22 @@ header p {
     border-radius: 4px;
 }
 
+body.dark-mode .progress-fill {
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
 .session-info {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
     color: #718096;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .session-info {
+    color: #94a3b8;
 }
 
 .session-info > div {
@@ -189,6 +329,12 @@ header p {
     transform: translateX(400px);
     transition: transform 0.3s ease;
     z-index: 1000;
+}
+
+body.dark-mode .notification {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .notification.show {
@@ -267,4 +413,9 @@ header p {
 .timer-display.completed {
     animation: pulse 0.5s ease-in-out;
     border-color: #48bb78;
+}
+
+body.dark-mode .timer-display.completed {
+    border-color: #10b981;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
 } 
