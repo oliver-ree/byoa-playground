@@ -1,58 +1,123 @@
-# internal-design-prototypes
+# Pomodoro Timer
 
-## Setup
-1. Clone this repository
-   - Create a Developer folder in your user directory and clone there:
-      - Open Terminal (you can find it in Applications > Utilities)
-      - Type: `mkdir -p ~/Developer`
-      - Type: `cd ~/Developer`
-      - Type: `git clone git@github.com:eucalyptusvc/internal-design-prototypes.git`
-      - Press Enter
+A beautiful, modern Pomodoro timer that runs in your browser. Built with vanilla HTML, CSS, and JavaScript.
 
-2. Install dependencies:
-   - First, make sure you have Node.js installed. Download it from [nodejs.org](https://nodejs.org/)
-   - Open Terminal
-   - Navigate to the project folder: `cd ~/Developer/internal-design-prototypes`
-   - Type the following and press Enter:
-   ```
-   yarn
-   ```
+## Features
 
-## Running the project
-1. Start the development server:
-   - In Terminal or Command Prompt, make sure you're in the project folder
-   - Type the following and press Enter:
-   ```
-   yarn start
-   ```
-   - Wait for the project to compile (this might take a minute)
+- ⏱️ **25-minute Pomodoro sessions** with 5-minute short breaks and 15-minute long breaks
+- 🎨 **Modern, responsive design** with smooth animations and beautiful gradients
+- 📊 **Progress tracking** with visual progress bar
+- 📈 **Session counting** and daily time tracking
+- 🔔 **Audio notifications** when sessions complete
+- 💾 **Local storage** to persist your progress across browser sessions
+- ⌨️ **Keyboard shortcuts** for quick control
+- 📱 **Mobile-friendly** responsive design
 
-2. Open your browser and navigate to `http://localhost:3000`
-   - The page should automatically open in your default browser
-   - If it doesn't, manually type `http://localhost:3000` in your browser's address bar
+## How to Use
 
-## Adding a new prototype
-1. Create a new branch (think of it as creating a separate workspace):
-   ```
-   git checkout -b your-branch-name
-   ```
+1. **Open the timer**: Simply open `index.html` in your web browser
+2. **Choose your mode**:
+   - **Pomodoro**: 25-minute focused work sessions
+   - **Short Break**: 5-minute breaks between pomodoros
+   - **Long Break**: 15-minute breaks after 4 pomodoros
+3. **Start your session**: Click "Start" or press the spacebar
+4. **Pause if needed**: Click "Pause" or press spacebar again
+5. **Reset**: Click "Reset" or press 'R' to reset the current session
 
-2. Create a new folder under `/pages` and name it `your-prototype-name`
+## Keyboard Shortcuts
 
-3. Save changes as you work, it's a way for you to snapshot progress and have clear checkpoint to go back to:
-   ```
-   git add .
-   git commit -m "Description of your changes"
-   ```
+- **Spacebar**: Start/Pause timer
+- **R**: Reset timer
 
-4. When ready to share your work, open a Pull Request (PR):
-   ```
-   git push -u origin your-branch-name
-   ```
+## Pomodoro Technique
 
-   Then:
-   - Go to the repository on GitHub: https://github.com/eucalyptusvc/internal-design-prototypes
-   - You should see a prompt to "Compare & pull request" for your recently pushed branch
-   - Click on it and fill out the PR description with details about your prototype
-   - Request reviews from team members if needed
-   - Click "Create pull request"
+The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks.
+
+### Basic Rules:
+
+1. **Work for 25 minutes** (one Pomodoro)
+2. **Take a 5-minute break**
+3. **After 4 Pomodoros, take a longer 15-30 minute break**
+4. **Repeat the cycle**
+
+## File Structure
+
+```
+pomodoro/
+├── index.html      # Main HTML structure
+├── styles.css      # Modern CSS styling
+├── script.js       # Timer functionality
+└── README.md       # This file
+```
+
+## Running the Timer
+
+### Option 1: Direct File Opening
+Simply double-click `index.html` or drag it into your browser.
+
+### Option 2: Local Server (Recommended)
+For the best experience, serve the files using a local server:
+
+```bash
+# Using Python 3
+python -m http.server 8000
+
+# Using Python 2
+python -m SimpleHTTPServer 8000
+
+# Using Node.js (if you have http-server installed)
+npx http-server
+
+# Using PHP
+php -S localhost:8000
+```
+
+Then open `http://localhost:8000` in your browser.
+
+## Features in Detail
+
+### Timer Modes
+- **Pomodoro (25 min)**: Main work sessions
+- **Short Break (5 min)**: Quick breaks between pomodoros
+- **Long Break (15 min)**: Extended breaks after 4 pomodoros
+
+### Progress Tracking
+- Visual progress bar showing session completion
+- Session counter for completed pomodoros
+- Daily total time tracking
+- Data persists across browser sessions
+
+### Notifications
+- Visual notifications when sessions complete
+- Audio notifications using Web Audio API
+- Auto-dismissing notifications after 5 seconds
+
+### Responsive Design
+- Works perfectly on desktop, tablet, and mobile
+- Touch-friendly buttons and controls
+- Adaptive layout for different screen sizes
+
+## Browser Compatibility
+
+This timer works in all modern browsers that support:
+- ES6 Classes
+- Local Storage
+- Web Audio API (for sound notifications)
+- CSS Grid and Flexbox
+- CSS Custom Properties
+
+## Customization
+
+You can easily customize the timer by modifying the JavaScript file:
+
+- Change session durations in the `switchMode` method
+- Modify notification sounds in `playNotificationSound`
+- Adjust auto-switching behavior in `autoSwitchMode`
+
+## License
+
+This project is open source and available under the MIT License.
+
+---
+
+**Happy focusing! 🍅** 
